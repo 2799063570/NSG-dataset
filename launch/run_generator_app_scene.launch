@@ -1,0 +1,80 @@
+<launch>
+  <arg name="debug" default="false"/>
+  <arg name="scene_type" default="mixed"/>
+  <arg name="random_obstacle_count" default="15"/>
+  <arg name="total_scenes" default="100"/>
+  <arg name="paths_per_scene" default="20"/>
+  <arg name="planning_timeout" default="25.0"/>
+  <arg name="output_dir" default="$(find motion_planning)/data/generated_app_scene"/>
+  <arg name="overwrite_output" default="false"/>
+  <arg name="shelf_open_side_sign" default="-1.0"/>
+
+  <arg name="shelf_center_x" default="0.55"/>
+  <arg name="shelf_center_y" default="0.0"/>
+  <arg name="shelf_center_z" default="0.45"/>
+  <arg name="shelf_width" default="0.80"/>
+  <arg name="shelf_depth" default="0.30"/>
+  <arg name="shelf_height" default="0.80"/>
+  <arg name="shelf_board_thickness" default="0.035"/>
+  <arg name="shelf_add_table" default="true"/>
+  <arg name="shelf_add_back_board" default="true"/>
+  <arg name="shelf_box_count" default="3"/>
+
+  <arg name="table_center_x" default="0.50"/>
+  <arg name="table_center_y" default="0.0"/>
+  <arg name="table_top_z" default="0.26"/>
+  <arg name="table_size_x" default="0.70"/>
+  <arg name="table_size_y" default="0.75"/>
+  <arg name="table_thickness" default="0.04"/>
+  <arg name="table_box_height" default="0.12"/>
+  <arg name="table_box_count" default="4"/>
+  <arg name="table_add_back_guard" default="true"/>
+  <arg name="table_add_side_guards" default="false"/>
+
+  <include file="$(find robot_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <node name="ompl_application_data_generator" pkg="motion_planning" type="data_generator_app_scene" output="screen" >
+    <param name="debug" value="$(arg debug)"/>
+    <param name="scene_type" value="$(arg scene_type)"/>
+    <param name="random_obstacle_count" value="$(arg random_obstacle_count)"/>
+    <param name="total_scenes" value="$(arg total_scenes)"/>
+    <param name="paths_per_scene" value="$(arg paths_per_scene)"/>
+    <param name="planning_timeout" value="$(arg planning_timeout)"/>
+    <param name="output_dir" value="$(arg output_dir)"/>
+    <param name="overwrite_output" value="$(arg overwrite_output)"/>
+    <param name="shelf_open_side_sign" value="$(arg shelf_open_side_sign)"/>
+    <param name="shelf_center_x" value="$(arg shelf_center_x)"/>
+    <param name="shelf_center_y" value="$(arg shelf_center_y)"/>
+    <param name="shelf_center_z" value="$(arg shelf_center_z)"/>
+    <param name="shelf_width" value="$(arg shelf_width)"/>
+    <param name="shelf_depth" value="$(arg shelf_depth)"/>
+    <param name="shelf_height" value="$(arg shelf_height)"/>
+    <param name="shelf_board_thickness" value="$(arg shelf_board_thickness)"/>
+    <param name="shelf_add_table" value="$(arg shelf_add_table)"/>
+    <param name="shelf_add_back_board" value="$(arg shelf_add_back_board)"/>
+    <param name="shelf_box_count" value="$(arg shelf_box_count)"/>
+    <param name="table_center_x" value="$(arg table_center_x)"/>
+    <param name="table_center_y" value="$(arg table_center_y)"/>
+    <param name="table_top_z" value="$(arg table_top_z)"/>
+    <param name="table_size_x" value="$(arg table_size_x)"/>
+    <param name="table_size_y" value="$(arg table_size_y)"/>
+    <param name="table_thickness" value="$(arg table_thickness)"/>
+    <param name="table_box_height" value="$(arg table_box_height)"/>
+    <param name="table_box_count" value="$(arg table_box_count)"/>
+    <param name="table_add_back_guard" value="$(arg table_add_back_guard)"/>
+    <param name="table_add_side_guards" value="$(arg table_add_side_guards)"/>
+  </node>
+
+  <group if="$(arg debug)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find motion_planning)/launch/planning_visual.rviz" />
+  </group>
+</launch>

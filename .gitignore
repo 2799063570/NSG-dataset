@@ -1,0 +1,10 @@
+/data/dataset/
+/data/generated*/
+/build/
+/devel/
+/install/
+__pycache__/
+*.pyc
+*.part
+*.csv
+*.csv.gz

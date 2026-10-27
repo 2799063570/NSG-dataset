@@ -1,0 +1,45 @@
+{
+  "dataset_snapshot": "26.05.21",
+  "publication_date": "2026-10-28",
+  "repository": "https://github.com/2799063570/NSG-dataset",
+  "release_tag": "dataset-26.05.21",
+  "files": [
+    {
+      "file": "training_envs.csv",
+      "bytes": 71297393,
+      "sha256": "ffeb07d9d319a295ab304052019ce7f401bf54cceb3e3b20ec11c73ee3f43b64",
+      "rows": 1296405,
+      "columns": 8,
+      "unique_scene_ids": 48015,
+      "scene_id_min": 0,
+      "scene_id_max": 48014,
+      "compressed_file": "training_envs.csv.gz",
+      "compressed_bytes": 23478317,
+      "compressed_sha256": "026c15fc448d521371871d73456b14e575e347d5817b4dec37e0c14795e018e6",
+      "obstacle_rows_by_type": {
+        "0": 417752,
+        "1": 410486,
+        "2": 468167
+      }
+    },
+    {
+      "file": "training_paths.csv",
+      "bytes": 1136856115,
+      "sha256": "3fe62d84577c2d88b8b32ad2e7b37f5d4fa48c785d3ab3595bd868a7aeac1fd3",
+      "rows": 18539735,
+      "columns": 8,
+      "unique_scene_ids": 48015,
+      "scene_id_min": 0,
+      "scene_id_max": 48014,
+      "compressed_file": "training_paths.csv.gz",
+      "compressed_bytes": 208105697,
+      "compressed_sha256": "bd676082f3999e9ad008b5bca5d3dd9a3042ec33ac52b05632cbee0a8d1f9ef3",
+      "unique_paths": 48015,
+      "waypoints_min": 100,
+      "waypoints_max": 956,
+      "waypoint_rows_total": 18539735
+    }
+  ],
+  "validation": "Full row-width and integer key scan; raw SHA-256 checksums; gzip decompression verified against raw hashes.",
+  "source_snapshot_note": "Generator sources copied without changes from the author-provided source directory on 2026-10-28. This is not evidence that this exact source revision and launch defaults generated the archived CSV snapshot."
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>motion_planning</name>
+  <version>0.1.0</version>
+  <description>NSG motion-planning dataset generation programs.</description>
+  <!-- Maintainer metadata retained from the supplied package; not a verified contact. -->
+  <maintainer email="s@todo.todo">s</maintainer>
+  <!-- The author has not selected a repository-wide licence. -->
+  <license>Unspecified</license>
+  <url type="repository">https://github.com/2799063570/NSG-dataset</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>shape_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>moveit_core</depend>
+  <depend>moveit_msgs</depend>
+  <depend>moveit_ros_planning</depend>
+  <depend>moveit_ros_planning_interface</depend>
+  <depend>moveit_visual_tools</depend>
+  <depend>rviz_visual_tools</depend>
+  <depend>geometric_shapes</depend>
+  <depend>eigen</depend>
+  <depend>ompl</depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <export/>
+</package>

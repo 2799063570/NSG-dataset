@@ -1,0 +1,23 @@
+<launch>
+  <arg name="debug" default="false"/>
+
+  <include file="$(find robot_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+    <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+  </node>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <node name="ompl_data_generator" pkg="motion_planning" type="data_generator_node" output="screen" >
+    <param name="debug" value="$(arg debug)"/>
+  </node>
+
+  <group if="$(arg debug)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find motion_planning)/launch/planning_visual.rviz" />
+  </group>
+
+</launch>
