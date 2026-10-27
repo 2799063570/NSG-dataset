@@ -37,7 +37,60 @@
       "unique_paths": 48015,
       "waypoints_min": 100,
       "waypoints_max": 956,
-      "waypoint_rows_total": 18539735
+      "waypoint_rows_total": 18539735,
+      "parts": [
+        {
+          "file": "training_paths.csv.gz.part01",
+          "bytes": 20971520,
+          "sha256": "9786e25dc1f1b9b2cd59fa2314b67d12ff57ec128cc4496a9fcc913c2d4d0a93"
+        },
+        {
+          "file": "training_paths.csv.gz.part02",
+          "bytes": 20971520,
+          "sha256": "eacab5b03c3dc40bd6eb542568a04ea4ba38b0dd0185e173900b0cfefa940dba"
+        },
+        {
+          "file": "training_paths.csv.gz.part03",
+          "bytes": 20971520,
+          "sha256": "32a10605a34a9a101e453f65a131bbf8ab448859494b6b5f6f7f08f74e47eade"
+        },
+        {
+          "file": "training_paths.csv.gz.part04",
+          "bytes": 20971520,
+          "sha256": "09d82324b7640ffed994d2d64d7a2830df3363a65eb7fc3596b01de177096aaa"
+        },
+        {
+          "file": "training_paths.csv.gz.part05",
+          "bytes": 20971520,
+          "sha256": "c455db9ef594061c556b43b3ad9a80697c7ae0e08fff8f06f6863455a30b22e5"
+        },
+        {
+          "file": "training_paths.csv.gz.part06",
+          "bytes": 20971520,
+          "sha256": "4a0d475561d84c5d525f09111d96929ee82efb7ac3eccf2e4e7169b1e0c86a18"
+        },
+        {
+          "file": "training_paths.csv.gz.part07",
+          "bytes": 20971520,
+          "sha256": "314f24902e1d54e1e4f61b635201e4516873e82f8c867510db4af86edf7cb4b9"
+        },
+        {
+          "file": "training_paths.csv.gz.part08",
+          "bytes": 20971520,
+          "sha256": "d9497fe84a66c5c6bb92635d7d27b33ea76226f99b207bf5199253325c5b737a"
+        },
+        {
+          "file": "training_paths.csv.gz.part09",
+          "bytes": 20971520,
+          "sha256": "52519d80f2fd29eb3a38533e7f7915d9f9448a95bd72f9f5197ef54d47c2dddc"
+        },
+        {
+          "file": "training_paths.csv.gz.part10",
+          "bytes": 19362017,
+          "sha256": "46924d4eaef69ee408465b04ae4575c7dc561129f9b6721af99410e0e2522efd"
+        }
+      ],
+      "download_note": "Concatenate compressed parts in listed order to reconstruct compressed_file; scripts/download_dataset.py does this automatically."
     }
   ],
   "validation": "Full row-width and integer key scan; raw SHA-256 checksums; gzip decompression verified against raw hashes.",

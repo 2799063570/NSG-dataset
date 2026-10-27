@@ -8,7 +8,7 @@ The raw CSV files are distributed as losslessly compressed **GitHub Release asse
 
 - [Dataset snapshot 26.05.21](https://github.com/2799063570/NSG-dataset/releases/tag/dataset-26.05.21)
 - [training_envs.csv.gz](https://github.com/2799063570/NSG-dataset/releases/download/dataset-26.05.21/training_envs.csv.gz)
-- [training_paths.csv.gz](https://github.com/2799063570/NSG-dataset/releases/download/dataset-26.05.21/training_paths.csv.gz)
+- Path data: download the ten `training_paths.csv.gz.part01`–`.part10` files from the Release, or use the script below.
 
 After cloning this repository, download, decompress and verify both CSV files with Python 3.8 or later:
 
@@ -16,7 +16,7 @@ After cloning this repository, download, decompress and verify both CSV files wi
 python3 scripts/download_dataset.py
 ```
 
-The files are restored to `data/dataset/26.05.21/`. Alternatively, download the `.gz` files above and decompress them with a gzip-compatible tool. Raw and compressed SHA-256 checksums are in [data/SHA256SUMS.txt](data/SHA256SUMS.txt); exact sizes and audited row counts are in [data/dataset-manifest.json](data/dataset-manifest.json).
+The script downloads the parts, verifies each one, reassembles the compressed path archive, and restores both CSV files to `data/dataset/26.05.21/`. Alternatively, download the assets manually, concatenate the ten path parts in numerical order into `training_paths.csv.gz`, and decompress both `.gz` files with a gzip-compatible tool. Raw, compressed and per-part SHA-256 checksums are in [data/SHA256SUMS.txt](data/SHA256SUMS.txt); exact sizes and audited row counts are in [data/dataset-manifest.json](data/dataset-manifest.json).
 
 The raw dataset is approximately **1.21 GB**. Keep enough free disk space for both the compressed downloads and the restored CSVs. The Git repository stores programs, metadata and checksums; the large CSV files are in Releases.
 
